@@ -1,9 +1,9 @@
 {
-  "name": "Smart iFrame",
+  "name": "Otoqi Bo iFrame",
   "author": {
-    "name": "Hubbub Studios",
-    "email": "taylor@hubbub.dev",
-    "url": "https://github.com/hubbubdev/zendesk-easy-iframe"
+    "name": "Otoqi",
+    "email": "jeanmarc@otoqi.com",
+    "url": "https://github.com/Otoqi/zendesk-otoqi-bo-iframe"
   },
   "defaultLocale": "en",
   "private": false,
@@ -21,7 +21,7 @@
     {
       "name": "url",
       "type": "text",
-      "default": "https://trex-runner.com?ticket_id={ticket_id}",
+      "default": "https://dashboard-test.otoqi.com/#/calendar_bo/{mission_ref}",
       "required": true
     },
     {

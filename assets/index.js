@@ -12,6 +12,7 @@ let state = {
   currentUser: null,
   requester: null,
   assignee: null,
+  mission_ref: null
 };
 
 /**
@@ -23,12 +24,14 @@ async function zd() {
   let currentUser = await client.get("currentUser");
   let requester = await client.get("ticket.requester");
   let assignee = await client.get("ticket.assignee.user");
+  let mission_ref = await client.get('ticket.customField:custom_field_17600296555165')
 
   state.settings = metadata.settings || null;
   state.ticket = ticket.ticket || null;
   state.currentUser = currentUser.currentUser || null;
   state.requester = requester["ticket.requester"] || null;
   state.assignee = assignee["ticket.assignee.user"] || null;
+  state.mission_ref = mission_ref["ticket.customField:custom_field_17600296555165"] || null;
 }
 
 /**
@@ -56,7 +59,8 @@ function generateUrl() {
   // Assignee
   let assignee_id = state.assignee?.id || null;
   let assignee_email = state.assignee?.email || null;
-
+  // Otoqi Mission ref
+  let mission_ref = state.mission_ref || null;
   url = url.replace("{ticket_id}", ticket_id);
   url = url.replace("{current_user_id}", current_user_id);
   url = url.replace("{current_user_email}", current_user_email);
@@ -64,6 +68,7 @@ function generateUrl() {
   url = url.replace("{requester_email}", requester_email);
   url = url.replace("{assignee_id}", assignee_id);
   url = url.replace("{assignee_email}", assignee_email);
+  url = url.replace("{mission_ref}", mission_ref);
 
   state.liveUrl = url;
   return url;
