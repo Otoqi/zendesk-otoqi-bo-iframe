@@ -21,7 +21,7 @@
     {
       "name": "url",
       "type": "text",
-      "default": "https://dashboard-test.otoqi.com/#/calendar_bo/{mission_ref}",
+      "default": "https://dashboard.otoqi.com/#/calendar_bo/{mission_ref}",
       "required": true
     },
     {
